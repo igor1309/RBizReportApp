@@ -11,6 +11,8 @@
 		2A50FE8E258E74B700C4D371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FE8D258E74B700C4D371 /* ContentView.swift */; };
 		2A50FE90258E74B900C4D371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A50FE8F258E74B900C4D371 /* Assets.xcassets */; };
 		2A50FE93258E74B900C4D371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A50FE92258E74B900C4D371 /* Preview Assets.xcassets */; };
+		2A50FE9C258E755E00C4D371 /* TengizRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FE9B258E755E00C4D371 /* TengizRow.swift */; };
+		2A50FE9F258E756D00C4D371 /* TengizRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FE9E258E756D00C4D371 /* TengizRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		2A50FE8F258E74B900C4D371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A50FE92258E74B900C4D371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A50FE94258E74B900C4D371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A50FE9B258E755E00C4D371 /* TengizRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TengizRow.swift; sourceTree = "<group>"; };
+		2A50FE9E258E756D00C4D371 /* TengizRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TengizRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				2A50FE8B258E74B700C4D371 /* RBizReportAppApp.swift */,
 				2A50FE8D258E74B700C4D371 /* ContentView.swift */,
+				2A50FE9B258E755E00C4D371 /* TengizRow.swift */,
+				2A50FE9E258E756D00C4D371 /* TengizRowView.swift */,
 				2A50FE8F258E74B900C4D371 /* Assets.xcassets */,
 				2A50FE94258E74B900C4D371 /* Info.plist */,
 				2A50FE91258E74B900C4D371 /* Preview Content */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A50FE9C258E755E00C4D371 /* TengizRow.swift in Sources */,
 				2A50FE8E258E74B700C4D371 /* ContentView.swift in Sources */,
+				2A50FE9F258E756D00C4D371 /* TengizRowView.swift in Sources */,
 				2A50FE8C258E74B700C4D371 /* RBizReportAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
