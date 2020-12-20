@@ -10,7 +10,7 @@ import SwiftUI
 struct FinRowView: View {
     let title: String
     let amount: Double
-    var percentage : Bool = false
+    var percentage: Bool = false
 
     var specifier: String {
         percentage ? "%.0f%%" : "%.2f"
@@ -24,4 +24,3 @@ struct FinRowView: View {
         }
     }
 }
-

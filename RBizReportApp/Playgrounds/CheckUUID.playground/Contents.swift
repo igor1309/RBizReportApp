@@ -19,12 +19,11 @@ extension Test {
     }
 }
 
-let test1_1 = Test.sample1
-let test2_1 = Test.sample2()
+let test11 = Test.sample1
+let test21 = Test.sample2()
 
-let test1_2 = Test.sample1
-let test2_2 = Test.sample2()
+let test12 = Test.sample1
+let test22 = Test.sample2()
 
-print(test1_1 == test1_2, test1_1, test1_2)
-print(test2_1 == test2_2, test2_1, test2_2)
-
+print(test11 == test12, test11, test12) // swiftlint:disable:this print_using
+print(test21 == test22, test21, test22) // swiftlint:disable:this print_using

@@ -11,7 +11,7 @@ struct TengizRowView: View {
 
     @EnvironmentObject private var document: ReportDocument
 
-    //@Binding var isExpanded: Bool
+    // @Binding var isExpanded: Bool
     @State private var isExpanded: Bool = false
     var row: TengizRow
 
@@ -92,7 +92,7 @@ struct TengizRowView: View {
             switch (row.hasIssue, row.isAmountMatch) {
                 case (true, _):       return Color(UIColor.systemYellow)
                 case (false, false):  return Color(UIColor.systemRed)
-                case (false, true):   return Color.secondary //(UIColor.systemGreen).opacity(0.7)
+                case (false, true):   return Color.secondary // (UIColor.systemGreen).opacity(0.7)
             }
         }
 

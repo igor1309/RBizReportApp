@@ -66,7 +66,7 @@ struct TengizReportView: View {
                 Label(section.note, systemImage: "square.and.pencil")
                     .foregroundColor(.secondary)
             }
-            
+
             ForEach(section.rows, content: TengizRowView.init)
         } label: {
             sectionLabel(section: section)
@@ -93,7 +93,11 @@ struct TengizReportView: View {
                         FinRowView(title: "Target", amount: target * 100, percentage: true)
 
                         if document.tengizReport.totalExpenses > 0 {
-                            FinRowView(title: "Reality", amount: section.amount / document.tengizReport.totalExpenses * 100, percentage: true)
+                            FinRowView(
+                                title: "Reality",
+                                amount: section.amount / document.tengizReport.totalExpenses * 100,
+                                percentage: true
+                            )
                         }
                     }
                 }
@@ -104,7 +108,7 @@ struct TengizReportView: View {
 
     private func reportPeriodAndDateView() -> some View {
         HStack(alignment: .firstTextBaseline) {
-            Label("\(document.tengizReport.period.month, specifier: "%02d").\(String(document.tengizReport.period.year))", systemImage: "calendar")
+            Label("\(document.tengizReport.period.month, specifier: "%02d").\(String(document.tengizReport.period.year))", systemImage: "calendar") // swiftlint:disable:this line_length
                 .foregroundColor(Color(UIColor.systemTeal))
 
             Spacer()

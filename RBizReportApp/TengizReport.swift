@@ -37,7 +37,7 @@ struct TengizSection: Identifiable, Codable {
     var rows: [TengizRow]
     var amount: Double
     var amountCalculated: Double {
-        rows.map(\.amount).reduce(0,+)
+        rows.map(\.amount).reduce(0, +)
     }
     var amountDelta: Double { amount - amountCalculated }
     var isAmountMatch: Bool { amount == amountCalculated }
@@ -46,6 +46,7 @@ struct TengizSection: Identifiable, Codable {
 }
 
 extension TengizReport {
+    // swiftlint:disable:next function_body_length
     static func sample() -> TengizReport {
         let components = DateComponents(year: 2020, month: 11, day: 16)
         let calendar = Calendar.current
@@ -256,7 +257,7 @@ extension TengizReport {
                         amount: 628_215.74,
                         economicRows: [],
                         hasIssue: false,
-                        note: "907.841р; (оплаты фактические: 529.875р 50к -переводы; 98.340р 24к-корпоративная карта; 0-наличные из кассы; Итого-628.215р 74к)"
+                        note: "907.841р; (оплаты фактические: 529.875р 50к -переводы; 98.340р 24к-корпоративная карта; 0-наличные из кассы; Итого-628.215р 74к)" // swiftlint:disable:this line_length
                     )
                 ],
                 amount: 628_215.74,
