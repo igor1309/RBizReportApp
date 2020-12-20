@@ -13,6 +13,13 @@
 		2A50FE93258E74B900C4D371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A50FE92258E74B900C4D371 /* Preview Assets.xcassets */; };
 		2A50FE9C258E755E00C4D371 /* TengizRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FE9B258E755E00C4D371 /* TengizRow.swift */; };
 		2A50FE9F258E756D00C4D371 /* TengizRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FE9E258E756D00C4D371 /* TengizRowView.swift */; };
+		2A50FEA5258E9F7D00C4D371 /* ReportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEA4258E9F7D00C4D371 /* ReportDocument.swift */; };
+		2A50FEA8258EA19600C4D371 /* TengizReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEA7258EA19600C4D371 /* TengizReportView.swift */; };
+		2A50FEAB258EA1E300C4D371 /* TengizReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEAA258EA1E300C4D371 /* TengizReport.swift */; };
+		2A50FEB5258EC0E700C4D371 /* LabeledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEB1258EC0D000C4D371 /* LabeledButton.swift */; };
+		2A50FEB8258EC13700C4D371 /* Ory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEB7258EC13700C4D371 /* Ory.swift */; };
+		2A50FEBB258F323F00C4D371 /* FinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEBA258F323F00C4D371 /* FinRowView.swift */; };
+		2A50FEC1258F33D800C4D371 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50FEBD258F33CB00C4D371 /* View+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,14 @@
 		2A50FE94258E74B900C4D371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A50FE9B258E755E00C4D371 /* TengizRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TengizRow.swift; sourceTree = "<group>"; };
 		2A50FE9E258E756D00C4D371 /* TengizRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TengizRowView.swift; sourceTree = "<group>"; };
+		2A50FEA4258E9F7D00C4D371 /* ReportDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDocument.swift; sourceTree = "<group>"; };
+		2A50FEA7258EA19600C4D371 /* TengizReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TengizReportView.swift; sourceTree = "<group>"; };
+		2A50FEAA258EA1E300C4D371 /* TengizReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TengizReport.swift; sourceTree = "<group>"; };
+		2A50FEAE258EAC0800C4D371 /* CheckUUID.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CheckUUID.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2A50FEB1258EC0D000C4D371 /* LabeledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledButton.swift; sourceTree = "<group>"; };
+		2A50FEB7258EC13700C4D371 /* Ory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ory.swift; sourceTree = "<group>"; };
+		2A50FEBA258F323F00C4D371 /* FinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinRowView.swift; sourceTree = "<group>"; };
+		2A50FEBD258F33CB00C4D371 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +73,18 @@
 			children = (
 				2A50FE8B258E74B700C4D371 /* RBizReportAppApp.swift */,
 				2A50FE8D258E74B700C4D371 /* ContentView.swift */,
-				2A50FE9B258E755E00C4D371 /* TengizRow.swift */,
+				2A50FEA7258EA19600C4D371 /* TengizReportView.swift */,
+				2A50FEBA258F323F00C4D371 /* FinRowView.swift */,
 				2A50FE9E258E756D00C4D371 /* TengizRowView.swift */,
+				2A50FEA4258E9F7D00C4D371 /* ReportDocument.swift */,
+				2A50FEAA258EA1E300C4D371 /* TengizReport.swift */,
+				2A50FE9B258E755E00C4D371 /* TengizRow.swift */,
+				2A50FEB1258EC0D000C4D371 /* LabeledButton.swift */,
+				2A50FEB7258EC13700C4D371 /* Ory.swift */,
+				2A50FEBD258F33CB00C4D371 /* View+Ext.swift */,
 				2A50FE8F258E74B900C4D371 /* Assets.xcassets */,
 				2A50FE94258E74B900C4D371 /* Info.plist */,
+				2A50FEA1258E9D3000C4D371 /* Playgrounds */,
 				2A50FE91258E74B900C4D371 /* Preview Content */,
 			);
 			path = RBizReportApp;
@@ -73,6 +96,14 @@
 				2A50FE92258E74B900C4D371 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A50FEA1258E9D3000C4D371 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				2A50FEAE258EAC0800C4D371 /* CheckUUID.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +176,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A50FE9C258E755E00C4D371 /* TengizRow.swift in Sources */,
+				2A50FEA5258E9F7D00C4D371 /* ReportDocument.swift in Sources */,
 				2A50FE8E258E74B700C4D371 /* ContentView.swift in Sources */,
+				2A50FEB5258EC0E700C4D371 /* LabeledButton.swift in Sources */,
 				2A50FE9F258E756D00C4D371 /* TengizRowView.swift in Sources */,
+				2A50FEB8258EC13700C4D371 /* Ory.swift in Sources */,
+				2A50FEAB258EA1E300C4D371 /* TengizReport.swift in Sources */,
+				2A50FEC1258F33D800C4D371 /* View+Ext.swift in Sources */,
 				2A50FE8C258E74B700C4D371 /* RBizReportAppApp.swift in Sources */,
+				2A50FEA8258EA19600C4D371 /* TengizReportView.swift in Sources */,
+				2A50FEBB258F323F00C4D371 /* FinRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

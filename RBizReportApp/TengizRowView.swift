@@ -9,12 +9,16 @@ import SwiftUI
 
 struct TengizRowView: View {
 
-    @Binding var isExpanded: Bool
+    @EnvironmentObject private var document: ReportDocument
+
+    //@Binding var isExpanded: Bool
+    @State private var isExpanded: Bool = false
     var row: TengizRow
+
+    @State private var showingRowDetail = false
 
     var body: some View {
         DisclosureGroup(isExpanded: $isExpanded, content: content, label: rowLabel)
-            .font(.system(.footnote, design: .monospaced))
     }
 
     private func content() -> some View {
@@ -22,32 +26,53 @@ struct TengizRowView: View {
             row.hasIssue ? Color(UIColor.systemYellow) : Color(UIColor.systemTeal)
         }
 
+        func editButton() -> some View {
+            Button("EDIT") {
+                Ory.withHapticsAndAnimation {
+                    document.sheetID = .rowEditor
+                }
+            }
+            .padding(3)
+            .padding(.horizontal, 5)
+            .foregroundColor(Color(UIColor.systemOrange))
+            .font(.caption2)
+            .background(
+                Capsule()
+                    .fill(Color(UIColor.tertiarySystemBackground))
+            )
+            .buttonStyle(PlainButtonStyle())
+            .padding(.trailing)
+            .padding(.top, 2)
+        }
+
         return VStack(alignment: .leading, spacing: 2) {
             ForEach(row.economicRows, content: economicRowView)
-
-            if !row.isAmountMatch {
-                Text("Split don't match.")
-                    .foregroundColor(Color(UIColor.systemRed))
-            }
 
             if !row.note.isEmpty {
                 Label(row.note, systemImage: "square.and.pencil")
                     .foregroundColor(noteColor())
                     .padding(.top, 3)
             }
+
+            HStack {
+                if !row.isAmountMatch {
+                    Text("Split don't match.")
+                        .foregroundColor(Color(UIColor.systemRed))
+                }
+                Spacer()
+                editButton()
+            }
         }
         .foregroundColor(.secondary)
-        .padding(.leading)
-        .padding(.leading)
     }
 
     private func economicRowView(_ economicRow: EconomicRow) -> some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text("\(economicRow.period.month, specifier: "%02d").\(String(economicRow.period.year))")
-            Text(economicRow.sense.simple)
-            Spacer()
-            Text("\(economicRow.amount, specifier: "%.0f")")
-        }
+        let title = "\(String(format: "%02d", economicRow.period.month)).\(String(economicRow.period.year))"
+
+        return FinRowView(
+            title: "\(title) \(economicRow.sense.simple)",
+            amount: economicRow.amount
+        )
         .padding(.trailing)
     }
 
@@ -72,12 +97,7 @@ struct TengizRowView: View {
         }
 
         return Label {
-            HStack {
-                Text(row.rowNumber)
-                Text(row.title)
-                Spacer()
-                Text("\(row.amount, specifier: "%.0f")")
-            }
+            FinRowView(title: "\(row.rowNumber) \(row.title)", amount: row.amount)
         } icon: {
             Image(systemName: icon())
                 .foregroundColor(iconColor())
@@ -88,29 +108,27 @@ struct TengizRowView: View {
 
 struct TengizRowView_Testing: View {
 
-    @State private var isExpanded = true
+    // @State private var isExpanded = true
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                TengizRowView(isExpanded: $isExpanded, row: TengizRow.sampleWithIssue())
-                TengizRowView(isExpanded: $isExpanded, row: TengizRow.sampleNoIssueNoMatch())
-                TengizRowView(isExpanded: $isExpanded, row: TengizRow.sampleNoIssueMatch())
-                Spacer()
+            List {
+                TengizRowView(row: TengizRow.sampleWithIssue())
+                TengizRowView(row: TengizRow.sampleNoIssueNoMatch())
+                TengizRowView(row: TengizRow.sampleNoIssueMatch())
             }
-            .padding()
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        withAnimation {
-                            isExpanded.toggle()
-                        }
-                    } label: {
-                        Image(systemName: isExpanded ? "chevron.right.circle" : "chevron.down.circle")
-                            .frame(width: 44, height: 44, alignment: .trailing)
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .primaryAction) {
+//                    Button {
+//                        withAnimation {
+//                            isExpanded.toggle()
+//                        }
+//                    } label: {
+//                        Image(systemName: isExpanded ? "chevron.right.circle" : "chevron.down.circle")
+//                            .frame(width: 44, height: 44, alignment: .trailing)
+//                    }
+//                }
+//            }
         }
     }
 }
@@ -119,6 +137,7 @@ struct TengizRowView_Previews: PreviewProvider {
     static var previews: some View {
         TengizRowView_Testing()
             .accentColor(Color(UIColor.systemOrange))
+            .environmentObject(ReportDocument(tengizReport: TengizReport.sample()))
             .environment(\.colorScheme, .dark)
     }
 }

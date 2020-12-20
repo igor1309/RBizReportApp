@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TengizRowView_Testing()
+        NavigationView {
+            TengizReportView(document: ReportDocument(tengizReport: TengizReport.sample()))
+                .listStyle(PlainListStyle())
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

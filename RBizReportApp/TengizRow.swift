@@ -27,8 +27,6 @@ struct EconomicRow: Identifiable, Codable {
 struct TengizRow: Identifiable, Codable {
     var id = UUID()
 
-    var period: Period
-
     var rowNumber: String
     var title: String
     var amount: Double
@@ -61,7 +59,6 @@ extension TengizRow {
         ]
 
         return TengizRow(
-            period: period,
             rowNumber: rowNumber,
             title: title,
             amount: amount,
@@ -95,7 +92,6 @@ extension TengizRow {
         ]
 
         return TengizRow(
-            period: period,
             rowNumber: rowNumber,
             title: title,
             amount: amount,
@@ -108,7 +104,7 @@ extension TengizRow {
     static func sampleNoIssueNoMatch() -> TengizRow {
         let period = Period(month: 10, year: 2020)
         let rowNumber = "1.1a"
-        let title = "Выручка"
+        let title = "Выручка от реализации"
         let amount: Double = 1_234_567
         let economicRows: [EconomicRow] = [
             EconomicRow(
@@ -124,7 +120,6 @@ extension TengizRow {
         ]
 
         return TengizRow(
-            period: period,
             rowNumber: rowNumber,
             title: title,
             amount: amount,
